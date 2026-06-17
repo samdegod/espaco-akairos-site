@@ -1,0 +1,1093 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Espaço Akairos — Clínica de Psicologia</title>
+  <meta name="description" content="Cuidado psicológico com acolhimento, técnica e respeito aos seus valores. Atendimento psicológico individual com equipe qualificada." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --marfim: #FAF7F2;
+      --areia: #F2E9DF;
+      --nude: #EAD6C8;
+      --taupe: #CBB9A6;
+      --verde: #8DA08C;
+      --verde-escuro: #667761;
+      --terracota: #C67A5A;
+      --texto: #3B332E;
+      --texto-suave: #6F625B;
+      --branco: #FFFFFF;
+      --borda: rgba(111, 98, 91, .16);
+      --sombra: 0 24px 70px rgba(59, 51, 46, .10);
+      --radius-lg: 28px;
+      --radius-md: 18px;
+      --radius-sm: 12px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background:
+        radial-gradient(circle at 8% 12%, rgba(234, 214, 200, .75), transparent 30%),
+        radial-gradient(circle at 92% 10%, rgba(141, 160, 140, .18), transparent 28%),
+        var(--marfim);
+      color: var(--texto);
+      font-family: "Lato", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.6;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1180px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(18px);
+      background: rgba(250, 247, 242, .78);
+      border-bottom: 1px solid var(--borda);
+    }
+
+    .nav {
+      min-height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .brand-mark {
+      width: 46px;
+      height: 46px;
+      border: 1px solid rgba(102, 119, 97, .35);
+      border-radius: 50% 50% 44% 44%;
+      display: grid;
+      place-items: center;
+      color: var(--verde-escuro);
+      background: rgba(255, 255, 255, .5);
+    }
+
+    .brand-mark svg { width: 25px; height: 25px; }
+
+    .brand-name {
+      font-family: "Playfair Display", serif;
+      font-size: 26px;
+      line-height: 1;
+      letter-spacing: -.02em;
+    }
+
+    .brand-sub {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: .22em;
+      color: var(--texto-suave);
+      margin-top: 4px;
+    }
+
+    .menu {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+      font-size: 14px;
+      color: var(--texto-suave);
+    }
+
+    .menu a:hover { color: var(--texto); }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      border: 0;
+      border-radius: 999px;
+      padding: 14px 22px;
+      font-weight: 900;
+      font-size: 14px;
+      cursor: pointer;
+      transition: .2s ease;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: var(--verde);
+      color: white;
+      box-shadow: 0 16px 32px rgba(102, 119, 97, .22);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      background: var(--verde-escuro);
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, .72);
+      border: 1px solid var(--borda);
+      color: var(--texto);
+    }
+
+    .btn-secondary:hover {
+      transform: translateY(-2px);
+      background: white;
+    }
+
+    .hero {
+      padding: 80px 0 70px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.02fr .98fr;
+      gap: 54px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--verde-escuro);
+      margin-bottom: 18px;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 42px;
+      height: 1px;
+      background: var(--terracota);
+    }
+
+    h1, h2, h3 {
+      font-family: "Playfair Display", serif;
+      font-weight: 600;
+      letter-spacing: -.035em;
+      line-height: 1.05;
+      margin: 0;
+    }
+
+    h1 {
+      font-size: clamp(44px, 6vw, 78px);
+      max-width: 760px;
+    }
+
+    h2 {
+      font-size: clamp(34px, 4vw, 54px);
+    }
+
+    h3 {
+      font-size: 28px;
+    }
+
+    .hero-text {
+      font-size: 20px;
+      color: var(--texto-suave);
+      max-width: 630px;
+      margin: 26px 0 34px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      align-items: center;
+    }
+
+    .hero-note {
+      margin-top: 22px;
+      color: var(--verde-escuro);
+      font-weight: 700;
+      font-size: 15px;
+    }
+
+    .hero-media {
+      position: relative;
+      min-height: 640px;
+    }
+
+    .photo-card {
+      overflow: hidden;
+      border-radius: 34px;
+      background: var(--areia);
+      box-shadow: var(--sombra);
+      border: 1px solid rgba(255,255,255,.65);
+    }
+
+    .photo-main {
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: min(470px, 88%);
+      z-index: 2;
+    }
+
+    .photo-main img {
+      height: 620px;
+      width: 100%;
+      object-fit: cover;
+    }
+
+    .floating-card {
+      position: absolute;
+      left: 0;
+      bottom: 36px;
+      z-index: 3;
+      width: min(330px, 76%);
+      padding: 28px;
+      border-radius: 24px;
+      background: rgba(255,255,255,.82);
+      backdrop-filter: blur(18px);
+      border: 1px solid var(--borda);
+      box-shadow: 0 20px 60px rgba(59,51,46,.12);
+    }
+
+    .floating-card strong {
+      display: block;
+      font-family: "Playfair Display", serif;
+      font-size: 28px;
+      line-height: 1.1;
+      margin-bottom: 10px;
+    }
+
+    .floating-card p {
+      color: var(--texto-suave);
+      margin: 0;
+    }
+
+    .leaf-blur {
+      position: absolute;
+      width: 210px;
+      height: 210px;
+      right: -42px;
+      bottom: 0;
+      border-radius: 999px;
+      background: rgba(141,160,140,.2);
+      filter: blur(30px);
+      z-index: 0;
+    }
+
+    section {
+      padding: 90px 0;
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 30px;
+      margin-bottom: 42px;
+    }
+
+    .section-head p {
+      max-width: 530px;
+      color: var(--texto-suave);
+      font-size: 18px;
+      margin: 0;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .soft-card {
+      background: rgba(255,255,255,.62);
+      border: 1px solid var(--borda);
+      border-radius: var(--radius-lg);
+      padding: 30px;
+      box-shadow: 0 16px 42px rgba(59,51,46,.06);
+    }
+
+    .soft-card .icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: rgba(141,160,140,.14);
+      color: var(--verde-escuro);
+      margin-bottom: 22px;
+    }
+
+    .soft-card p {
+      color: var(--texto-suave);
+      margin-bottom: 0;
+    }
+
+    .about {
+      background: linear-gradient(180deg, rgba(242,233,223,.65), rgba(250,247,242,.2));
+      border-top: 1px solid var(--borda);
+      border-bottom: 1px solid var(--borda);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 54px;
+      align-items: center;
+    }
+
+    .about-photo {
+      border-radius: 34px;
+      overflow: hidden;
+      box-shadow: var(--sombra);
+    }
+
+    .about-photo img {
+      height: 620px;
+      width: 100%;
+      object-fit: cover;
+    }
+
+    .about-content p {
+      color: var(--texto-suave);
+      font-size: 18px;
+    }
+
+    .values {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+      margin-top: 28px;
+    }
+
+    .value-pill {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: rgba(255,255,255,.7);
+      border: 1px solid var(--borda);
+      padding: 14px 16px;
+      border-radius: 999px;
+      font-weight: 900;
+      color: var(--verde-escuro);
+    }
+
+    .process-wrap {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      counter-reset: step;
+    }
+
+    .step {
+      position: relative;
+      min-height: 250px;
+    }
+
+    .step::before {
+      counter-increment: step;
+      content: "0" counter(step);
+      font-family: "Playfair Display", serif;
+      font-size: 48px;
+      color: rgba(198,122,90,.34);
+      line-height: 1;
+      display: block;
+      margin-bottom: 26px;
+    }
+
+    .team {
+      background:
+        radial-gradient(circle at 18% 10%, rgba(234, 214, 200, .75), transparent 26%),
+        rgba(242,233,223,.52);
+    }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .team-card {
+      overflow: hidden;
+      border-radius: 26px;
+      background: rgba(255,255,255,.78);
+      border: 1px solid var(--borda);
+      box-shadow: 0 16px 42px rgba(59,51,46,.07);
+    }
+
+    .team-img {
+      aspect-ratio: 4 / 5;
+      background: var(--areia);
+      overflow: hidden;
+    }
+
+    .team-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .team-body {
+      padding: 24px;
+    }
+
+    .team-body h3 {
+      font-size: 25px;
+      margin-bottom: 6px;
+    }
+
+    .role {
+      color: var(--verde-escuro);
+      font-weight: 900;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: .09em;
+      margin-bottom: 14px;
+    }
+
+    .team-body p {
+      color: var(--texto-suave);
+      font-size: 15px;
+      margin-bottom: 18px;
+    }
+
+    .mini-link {
+      font-weight: 900;
+      color: var(--verde-escuro);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .approach-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .approach-list {
+      display: grid;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .approach-item {
+      padding: 17px 18px;
+      border-radius: 18px;
+      background: rgba(255,255,255,.7);
+      border: 1px solid var(--borda);
+      font-weight: 700;
+      color: var(--texto);
+    }
+
+    .testimonial {
+      background: var(--texto);
+      color: white;
+      border-radius: 38px;
+      padding: 54px;
+      display: grid;
+      grid-template-columns: 1fr .78fr;
+      gap: 34px;
+      align-items: center;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .testimonial::after {
+      content: "";
+      position: absolute;
+      width: 240px;
+      height: 240px;
+      border-radius: 50%;
+      background: rgba(141,160,140,.2);
+      right: -70px;
+      top: -70px;
+      filter: blur(10px);
+    }
+
+    .quote {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(31px, 4vw, 52px);
+      line-height: 1.1;
+      position: relative;
+      z-index: 1;
+    }
+
+    .testimonial p {
+      color: rgba(255,255,255,.72);
+      position: relative;
+      z-index: 1;
+    }
+
+    .faq-grid {
+      display: grid;
+      grid-template-columns: .78fr 1.22fr;
+      gap: 34px;
+      align-items: start;
+    }
+
+    details {
+      background: rgba(255,255,255,.74);
+      border: 1px solid var(--borda);
+      border-radius: 18px;
+      padding: 22px 24px;
+      margin-bottom: 12px;
+    }
+
+    summary {
+      cursor: pointer;
+      font-weight: 900;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    summary::-webkit-details-marker { display: none; }
+
+    summary::after {
+      content: "+";
+      color: var(--verde-escuro);
+      font-size: 24px;
+      line-height: 1;
+    }
+
+    details[open] summary::after { content: "–"; }
+
+    details p {
+      margin: 16px 0 0;
+      color: var(--texto-suave);
+    }
+
+    .cta {
+      padding: 92px 0;
+    }
+
+    .cta-box {
+      background:
+        linear-gradient(135deg, rgba(141,160,140,.95), rgba(102,119,97,.95)),
+        var(--verde);
+      color: white;
+      border-radius: 38px;
+      padding: 70px;
+      text-align: center;
+      box-shadow: var(--sombra);
+    }
+
+    .cta-box h2 {
+      max-width: 740px;
+      margin: 0 auto;
+    }
+
+    .cta-box p {
+      color: rgba(255,255,255,.78);
+      font-size: 19px;
+      max-width: 680px;
+      margin: 22px auto 34px;
+    }
+
+    .cta-box .btn {
+      background: white;
+      color: var(--verde-escuro);
+    }
+
+    footer {
+      padding: 48px 0;
+      border-top: 1px solid var(--borda);
+      color: var(--texto-suave);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr .8fr;
+      gap: 28px;
+    }
+
+    .footer-grid strong {
+      color: var(--texto);
+    }
+
+    .mobile-cta {
+      display: none;
+    }
+
+    @media (max-width: 980px) {
+      .menu {
+        display: none;
+      }
+
+      .hero-grid,
+      .about-grid,
+      .approach-grid,
+      .testimonial,
+      .faq-grid,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-media {
+        min-height: auto;
+      }
+
+      .photo-main,
+      .floating-card {
+        position: relative;
+        width: 100%;
+        right: auto;
+        left: auto;
+        top: auto;
+        bottom: auto;
+      }
+
+      .photo-main img {
+        height: auto;
+      }
+
+      .floating-card {
+        margin-top: -42px;
+        width: calc(100% - 34px);
+        margin-left: 17px;
+      }
+
+      .card-grid,
+      .process-wrap,
+      .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      section {
+        padding: 70px 0;
+      }
+
+      .cta-box {
+        padding: 48px 28px;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .container {
+        width: min(100% - 28px, 1180px);
+      }
+
+      .nav {
+        min-height: 72px;
+      }
+
+      .brand-name {
+        font-size: 22px;
+      }
+
+      .hero {
+        padding: 50px 0 58px;
+      }
+
+      h1 {
+        font-size: 43px;
+      }
+
+      .hero-text,
+      .section-head p,
+      .about-content p {
+        font-size: 16px;
+      }
+
+      .section-head {
+        display: block;
+      }
+
+      .section-head p {
+        margin-top: 18px;
+      }
+
+      .card-grid,
+      .process-wrap,
+      .team-grid,
+      .values {
+        grid-template-columns: 1fr;
+      }
+
+      .soft-card {
+        padding: 24px;
+      }
+
+      .about-photo img {
+        height: auto;
+      }
+
+      .testimonial {
+        padding: 34px 26px;
+        border-radius: 28px;
+      }
+
+      .mobile-cta {
+        display: block;
+        position: fixed;
+        left: 14px;
+        right: 14px;
+        bottom: 14px;
+        z-index: 80;
+      }
+
+      .mobile-cta .btn {
+        width: 100%;
+        box-shadow: 0 18px 40px rgba(59,51,46,.22);
+      }
+
+      body {
+        padding-bottom: 86px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container nav">
+      <a class="brand" href="#inicio" aria-label="Espaço Akairos">
+        <div class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M6 19c7-2 11-8 12-15" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+            <path d="M8 14c-2.7-.8-4.1-2.6-4-5.4 3.1.1 5.1 1.6 6 4.4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+            <path d="M12.5 10.5c-.9-3 .2-5.2 3.1-6.7 1.3 3 .6 5.3-2.1 7" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+            <path d="M10 17.2c2.6-1.4 5.1-1.2 7.5.8-2.5 2.1-5.1 2.2-7.8.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div>
+          <div class="brand-name">Espaço Akairos</div>
+          <div class="brand-sub">Clínica de Psicologia</div>
+        </div>
+      </a>
+
+      <nav class="menu" aria-label="Menu principal">
+        <a href="#sobre">Sobre</a>
+        <a href="#processo">Como funciona</a>
+        <a href="#equipe">Equipe</a>
+        <a href="#faq">Dúvidas</a>
+        <a class="btn btn-primary" href="https://wa.me/5500000000000" target="_blank" rel="noopener">Agendar conversa</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="inicio">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">Acolhimento | Crescimento | Propósito</div>
+          <h1>Cuidado psicológico com acolhimento, técnica e respeito aos seus valores.</h1>
+          <p class="hero-text">
+            Um espaço seguro para cuidar da saúde emocional, compreender sua história e caminhar com mais clareza, maturidade e propósito.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="https://wa.me/5500000000000" target="_blank" rel="noopener">Quero agendar meu atendimento</a>
+            <a class="btn btn-secondary" href="#equipe">Conhecer a equipe</a>
+          </div>
+          <div class="hero-note">Atendimento psicológico individual — online e/ou presencial.</div>
+        </div>
+
+        <div class="hero-media" aria-label="Retrato profissional">
+          <div class="leaf-blur"></div>
+          <div class="photo-card photo-main">
+            <img src="akairos_site_assets/gisele-retrato-01.png" alt="Psicóloga do Espaço Akairos em ambiente profissional" />
+          </div>
+          <div class="floating-card">
+            <strong>Você não precisa carregar tudo sozinho.</strong>
+            <p>A terapia é um lugar de escuta, organização interna e construção de novos caminhos.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="para-quem">
+      <div class="container">
+        <div class="section-head">
+          <h2>Talvez você esteja vivendo um tempo em que precisa ser ouvido com mais cuidado.</h2>
+          <p>O Akairos acolhe pessoas em diferentes fases da vida, com demandas emocionais, relacionais, profissionais e existenciais.</p>
+        </div>
+
+        <div class="card-grid">
+          <article class="soft-card">
+            <div class="icon">♡</div>
+            <h3>Ansiedade e sobrecarga</h3>
+            <p>Para quem tem se sentido cansado, acelerado, inseguro ou emocionalmente esgotado.</p>
+          </article>
+
+          <article class="soft-card">
+            <div class="icon">☼</div>
+            <h3>Autoconhecimento</h3>
+            <p>Para quem deseja compreender melhor emoções, padrões, pensamentos e escolhas.</p>
+          </article>
+
+          <article class="soft-card">
+            <div class="icon">⌁</div>
+            <h3>Fases de decisão</h3>
+            <p>Para quem está passando por mudanças, transições, conflitos internos ou escolhas importantes.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="about" id="sobre">
+      <div class="container about-grid">
+        <div class="about-photo">
+          <img src="akairos_site_assets/gisele-retrato-02.png" alt="Gisele em ambiente de trabalho do Espaço Akairos" />
+        </div>
+
+        <div class="about-content">
+          <div class="eyebrow">Sobre o Akairos</div>
+          <h2>Um espaço clínico para cuidado emocional com propósito.</h2>
+          <p>
+            O Espaço Akairos nasceu para oferecer cuidado psicológico sério, ético e acolhedor para pessoas que desejam cuidar da mente, das emoções e da própria história.
+          </p>
+          <p>
+            Nosso trabalho une conhecimento científico, responsabilidade profissional e sensibilidade para acolher histórias reais, dores reais e processos que precisam ser conduzidos com segurança.
+          </p>
+
+          <div class="values">
+            <div class="value-pill">Escuta responsável</div>
+            <div class="value-pill">Cuidado ético</div>
+            <div class="value-pill">Ambiente seguro</div>
+            <div class="value-pill">Respeito aos valores</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="processo">
+      <div class="container">
+        <div class="section-head">
+          <h2>Como funciona o atendimento</h2>
+          <p>Um processo simples, seguro e individualizado para você iniciar seu acompanhamento com clareza.</p>
+        </div>
+
+        <div class="process-wrap">
+          <article class="soft-card step">
+            <h3>Primeiro contato</h3>
+            <p>Você entra em contato pelo WhatsApp e compartilha brevemente o que está buscando.</p>
+          </article>
+
+          <article class="soft-card step">
+            <h3>Direcionamento</h3>
+            <p>Nossa equipe entende sua demanda inicial e indica o profissional mais adequado.</p>
+          </article>
+
+          <article class="soft-card step">
+            <h3>Agendamento</h3>
+            <p>Alinhamos horários disponíveis, modalidade de atendimento e informações iniciais.</p>
+          </article>
+
+          <article class="soft-card step">
+            <h3>Primeira sessão</h3>
+            <p>O psicólogo escuta sua história, compreende sua demanda e inicia o caminho terapêutico.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="team" id="equipe">
+      <div class="container">
+        <div class="section-head">
+          <h2>Conheça nossa equipe</h2>
+          <p>Profissionais com diferentes abordagens clínicas, unidos pelo compromisso com um cuidado humano, técnico e responsável.</p>
+        </div>
+
+        <div class="team-grid">
+          <article class="team-card">
+            <div class="team-img">
+              <img src="akairos_site_assets/gisele-retrato-03.png" alt="Gisele Campos" />
+            </div>
+            <div class="team-body">
+              <h3>Gisele Campos</h3>
+              <div class="role">Psicóloga e fundadora · CRP inserir</div>
+              <p>Base em Terapia Cognitivo-Comportamental, terapias contextuais, neuropsicoterapia e formação em Terapia da Plenitude.</p>
+              <a class="mini-link" href="https://wa.me/5500000000000" target="_blank" rel="noopener">Agendar com Gisele →</a>
+            </div>
+          </article>
+
+          <article class="team-card">
+            <div class="team-img">
+              <img src="akairos_site_assets/gisele-retrato-01.png" alt="Carolaine Rodrigues" />
+            </div>
+            <div class="team-body">
+              <h3>Carolaine Rodrigues</h3>
+              <div class="role">Psicóloga · CRP inserir</div>
+              <p>Atua com ansiedade, autoconhecimento, equilíbrio emocional e orientação de carreira, com base na Gestalt-terapia.</p>
+              <a class="mini-link" href="https://wa.me/5500000000000" target="_blank" rel="noopener">Agendar com Carolaine →</a>
+            </div>
+          </article>
+
+          <article class="team-card">
+            <div class="team-img">
+              <img src="akairos_site_assets/gisele-retrato-02.png" alt="Celiano Daniel" />
+            </div>
+            <div class="team-body">
+              <h3>Celiano Daniel</h3>
+              <div class="role">Psicólogo · CRP inserir</div>
+              <p>Psicólogo de abordagem psicanalítica, com escuta voltada para compreender conflitos, repetições e questões profundas.</p>
+              <a class="mini-link" href="https://wa.me/5500000000000" target="_blank" rel="noopener">Agendar com Celiano →</a>
+            </div>
+          </article>
+
+          <article class="team-card">
+            <div class="team-img">
+              <img src="akairos_site_assets/gisele-retrato-03.png" alt="Sâmala Carneiro" />
+            </div>
+            <div class="team-body">
+              <h3>Sâmala Carneiro</h3>
+              <div class="role">Psicóloga · CRP inserir</div>
+              <p>Atende ansiedade, depressão, burnout e autoconhecimento com base em TCC, ACT e Terapia dos Esquemas.</p>
+              <a class="mini-link" href="https://wa.me/5500000000000" target="_blank" rel="noopener">Agendar com Sâmala →</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="abordagens">
+      <div class="container approach-grid">
+        <div>
+          <div class="eyebrow">Abordagens</div>
+          <h2>Diferentes olhares clínicos, um mesmo compromisso com o cuidado.</h2>
+        </div>
+
+        <div>
+          <p style="color: var(--texto-suave); font-size: 18px; margin-top: 0;">
+            Cada profissional possui uma formação e abordagem específica. Isso permite que cada pessoa seja acompanhada de acordo com sua necessidade, história e momento de vida.
+          </p>
+          <div class="approach-list">
+            <div class="approach-item">Terapia Cognitivo-Comportamental</div>
+            <div class="approach-item">Gestalt-terapia</div>
+            <div class="approach-item">Psicanálise</div>
+            <div class="approach-item">Terapias Contextuais</div>
+            <div class="approach-item">Terapia de Aceitação e Compromisso</div>
+            <div class="approach-item">Terapia dos Esquemas</div>
+            <div class="approach-item">Orientação de carreira</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section aria-label="Mensagem institucional">
+      <div class="container">
+        <div class="testimonial">
+          <div class="quote">“Aqui, você não é tratado como um problema a ser resolvido, mas como uma pessoa com história, dores, possibilidades e propósito.”</div>
+          <div>
+            <p>
+              O processo terapêutico não se resume ao alívio de sintomas. Ele também pode ser um caminho de autoconhecimento, reorganização emocional, amadurecimento e reconexão com valores importantes da vida.
+            </p>
+            <a class="btn btn-secondary" href="https://wa.me/5500000000000" target="_blank" rel="noopener">Falar com a equipe</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq">
+      <div class="container faq-grid">
+        <div>
+          <div class="eyebrow">Dúvidas frequentes</div>
+          <h2>Antes de agendar</h2>
+          <p style="color: var(--texto-suave); font-size: 18px;">
+            Algumas respostas rápidas para ajudar você a dar o primeiro passo com mais segurança.
+          </p>
+        </div>
+
+        <div>
+          <details>
+            <summary>O atendimento é online ou presencial?</summary>
+            <p>Insira aqui a modalidade atual da clínica: online, presencial ou ambos. Também informe a cidade, caso haja atendimento presencial.</p>
+          </details>
+
+          <details>
+            <summary>Como sei qual psicólogo escolher?</summary>
+            <p>Você pode falar com nossa equipe pelo WhatsApp. A partir da sua demanda inicial, ajudamos a indicar o profissional mais adequado para seu momento.</p>
+          </details>
+
+          <details>
+            <summary>A primeira sessão já é terapia?</summary>
+            <p>Sim. A primeira sessão é um momento de escuta, compreensão da sua história e início do processo terapêutico.</p>
+          </details>
+
+          <details>
+            <summary>Preciso ser cristão para ser atendido?</summary>
+            <p>Não necessariamente. O Akairos tem uma identidade cristã e acolhe especialmente pessoas que valorizam essa visão, mas o atendimento psicológico é realizado com ética, respeito e responsabilidade profissional.</p>
+          </details>
+
+          <details>
+            <summary>A terapia garante resultado?</summary>
+            <p>Não. Cada processo terapêutico é único. O acompanhamento psicológico não trabalha com promessa de resultado, mas com cuidado, escuta, construção e responsabilidade ao longo do processo.</p>
+          </details>
+
+          <details>
+            <summary>Como faço para agendar?</summary>
+            <p>Basta clicar no botão de WhatsApp, falar com nossa equipe e verificar os horários disponíveis.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta" id="contato">
+      <div class="container">
+        <div class="cta-box">
+          <h2>Comece seu processo de cuidado emocional.</h2>
+          <p>No Espaço Akairos, você encontra um lugar seguro para falar, elaborar, compreender e crescer com acompanhamento profissional.</p>
+          <a class="btn" href="https://wa.me/5500000000000" target="_blank" rel="noopener">Agendar pelo WhatsApp</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <div class="brand" style="margin-bottom: 16px;">
+          <div class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path d="M6 19c7-2 11-8 12-15" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+              <path d="M8 14c-2.7-.8-4.1-2.6-4-5.4 3.1.1 5.1 1.6 6 4.4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+              <path d="M12.5 10.5c-.9-3 .2-5.2 3.1-6.7 1.3 3 .6 5.3-2.1 7" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div>
+            <div class="brand-name">Espaço Akairos</div>
+            <div class="brand-sub">Acolhimento | Crescimento | Propósito</div>
+          </div>
+        </div>
+        <p>Todos os atendimentos seguem as diretrizes éticas da Psicologia.</p>
+      </div>
+
+      <div>
+        <strong>Contato</strong>
+        <p>WhatsApp: inserir número<br>Instagram: inserir perfil<br>Endereço: inserir endereço</p>
+      </div>
+
+      <div>
+        <strong>Responsável técnica</strong>
+        <p>Gisele Campos<br>CRP inserir<br>CNPJ inserir se desejar</p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="mobile-cta">
+    <a class="btn btn-primary" href="https://wa.me/5500000000000" target="_blank" rel="noopener">Agendar pelo WhatsApp</a>
+  </div>
+</body>
+</html>
